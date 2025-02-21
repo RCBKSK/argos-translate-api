@@ -14,6 +14,10 @@ package_to_install = next(
 )
 argostranslate.package.install_from_path(package_to_install.download())
 
+@app.route('/')
+def home():
+    return "Argos Translate API is running!"
+
 @app.route('/translate', methods=['POST'])
 def translate():
     data = request.json
